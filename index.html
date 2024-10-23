@@ -1,189 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agricultural Science Portal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f8f8f8;
-        }
-    </style>
+    <title>Agricultural Science Portal - Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>
-        <h1>Agricultural Science Department Portal</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#students">Student Profiles</a></li>
-                <li><a href="#re-admission">Student Re-Admission</a></li>
-                <li><a href="#grades">Grades</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Agricultural Science Department Portal</h1>
+        </header>
+        
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="students.html">Student Profiles</a></li>
+                    <li><a href="add-student.html">Add Student</a></li>
+                    <li><a href="edit-student.html">Edit Student</a></li>
+                    <li><a href="grades.html">Grades</a></li>
+                    <li><a href="pending-admissions.html">Pending Admissions</a></li>
+                    <li><a href="transition.html">Student Transition</a></li>
+                    <li><a href="re-admission.html">Student Re-Admission</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <main>
-        <!-- Home Section -->
-        <section id="home">
-            <h1>Welcome to the Agricultural Science Portal</h1>
-            <p>This is the official student portal for the Agricultural Science Department. Here you can find student profiles, courses, and more.</p>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h1>About the Agricultural Science Department</h1>
-            <p>We are committed to advancing agricultural research and education, empowering students with the knowledge and skills necessary for sustainable agriculture.</p>
-        </section>
-
-        <!-- Courses Section -->
-        <section id="courses">
-            <h1>Course Catalog</h1>
-            <div id="course-list"></div>
-        </section>
-
-        <!-- Student Profiles Section -->
-        <section id="students">
-            <h1>Student Profiles</h1>
-            <div id="student-list"></div>
-        </section>
-
-        <!-- Student Re-Admission Section -->
-        <section id="re-admission">
-            <h1>Student Re-Admission</h1>
-            <p>Manage student re-admission and transitions.</p>
-        </section>
-
-        <!-- Grades Section -->
-        <section id="grades">
-            <h1>Grades</h1>
-            <table id="grade-table">
-                <thead>
-                    <tr>
-                        <th>Student Name</th>
-                        <th>Course</th>
-                        <th>Grade</th>
-                    </tr>
-                </thead>
-                <tbody id="grade-list">
-                    <!-- Grade details will be dynamically loaded here -->
-                </tbody>
-            </table>
-        </section>
-    </main>
-
-    <script>
-        // Sample JSON Data for Students, Courses, and Grades
-        const students = [
-            { "id": "1", "first_name": "John", "last_name": "Doe", "email": "john@example.com", "status": "Active" },
-            { "id": "2", "first_name": "Jane", "last_name": "Smith", "email": "jane@example.com", "status": "Ex-Student" }
-        ];
-
-        const courses = [
-            { "id": "101", "name": "Intro to Agricultural Science", "credits": 3 },
-            { "id": "102", "name": "Soil Science", "credits": 4 }
-        ];
-
-        const grades = [
-            { "student_id": "1", "course": "Intro to Agricultural Science", "grade": "A" },
-            { "student_id": "2", "course": "Soil Science", "grade": "B" }
-        ];
-
-        // Function to Load Students
-        function loadStudents() {
-            const studentList = document.getElementById('student-list');
-            students.forEach(student => {
-                const div = document.createElement('div');
-                div.textContent = `${student.first_name} ${student.last_name} (${student.status}) - Email: ${student.email}`;
-                studentList.appendChild(div);
-            });
-        }
-
-        // Function to Load Courses
-        function loadCourses() {
-            const courseList = document.getElementById('course-list');
-            courses.forEach(course => {
-                const div = document.createElement('div');
-                div.textContent = `${course.name} - ${course.credits} Credits`;
-                courseList.appendChild(div);
-            });
-        }
-
-        // Function to Load Grades
-        function loadGrades() {
-            const gradeList = document.getElementById('grade-list');
-            grades.forEach(grade => {
-                const student = students.find(s => s.id === grade.student_id);
-                const tr = document.createElement('tr');
-                tr.innerHTML = `<td>${student.first_name} ${student.last_name}</td><td>${grade.course}</td><td>${grade.grade}</td>`;
-                gradeList.appendChild(tr);
-            });
-        }
-
-        // Call Functions to Load Data
-        document.addEventListener('DOMContentLoaded', () => {
-            loadStudents();
-            loadCourses();
-            loadGrades();
-        });
-    </script>
+        <main>
+            <section id="home">
+                <h2>Welcome to the Agricultural Science Portal</h2>
+                <p>This is the official student portal for the Agricultural Science Department. Here you can find student profiles, courses, and more.</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 HZ University - Agricultural Science Department</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
-
 </html>
