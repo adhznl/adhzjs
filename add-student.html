@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Science Portal - Add Student</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agricultural Science Department Portal</h1>
+        </header>
+        
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="students.html">Student Profiles</a></li>
+                    <li><a href="add-student.html">Add Student</a></li>
+                    <li><a href="edit-student.html">Edit Student</a></li>
+                    <li><a href="grades.html">Grades</a></li>
+                    <li><a href="pending-admissions.html">Pending Admissions</a></li>
+                    <li><a href="transition.html">Student Transition</a></li>
+                    <li><a href="re-admission.html">Student Re-Admission</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            <h2>Add New Student</h2>
+            <form id="add-student-form">
+                <label for="student-id">Student ID:</label>
+                <input type="text" id="student-id" required>
+                
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" required>
+                
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" required>
+                
+                <label for="psn-number">PSN Number:</label>
+                <input type="text" id="psn-number" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="country">Country:</label>
+                <input type="text" id="country" required>
+                
+                <label for="father-name">Father's Name:</label>
+                <input type="text" id="father-name" required>
+                
+                <label for="mother-name">Mother's Name:</label>
+                <input type="text" id="mother-name" required>
+                
+                <button type="submit">Add Student</button>
+            </form>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 HZ University - Agricultural Science Department</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
